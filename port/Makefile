@@ -11,7 +11,6 @@ ifeq ($(wildcard $(BOARD_DIR)/.),)
 $(error Invalid BOARD specified: $(BOARD_DIR))
 endif
 
-
 # Firmware verion 
 MICROPY_GIT_TAG = $(strip $(shell git describe --tags))
 FIRMWARE_NAME = $(BOARD)-$(MICROPY_GIT_TAG)
@@ -365,8 +364,9 @@ SRC_C = \
 	machine_wdt.c \
 	mpthreadport.c \
 	machine_rtc.c \
-	machine_sdcard.c 
-
+	machine_sdcard.c \
+	example.c
+# 基于C的mPy内嵌附加模块
 EXTMOD_SRC_C += $(addprefix extmod/,\
 	modonewire.c \
 	)
@@ -501,6 +501,7 @@ SRC_C := $(addprefix ports/esp32/, $(filter-out $(notdir $(BOARD_C)) $(notdir $(
 PY_O := $(filter-out $(BUILD)/extmod/modframebuf.o, $(PY_O))
 
 SRC_C += $(BOARD_C) $(BUILTIN_C) $(SRC_MOD)
+
 
 OBJ_MP =
 OBJ_MP += $(PY_O)
@@ -899,9 +900,9 @@ all: $(BUILD)/firmware.bin
 idf-version:
 	$(ECHO) "ESP IDF supported hash: $(ESPIDF_SUPHASH)"
 
-$(BUILD)/firmware.bin: $(BUILD)/bootloader.bin $(BUILD)/partitions.bin $(BUILD)/application.bin
+$(BUILD)/firmware.bin: $(BUILD)/bootloader.bin $(BUILD)/partitions.bin $(BUILD)/application.bin ./Noto_Sans_CJK_SC_Light16.bin
 	$(ECHO) "Create $@"
-	$(Q)$(PYTHON) makeimg.py $^ $@
+	$(Q)$(PYTHON) release.py $^ $@
 
 deploy: $(BUILD)/firmware.bin
 	$(ECHO) "Writing $^ to the board"

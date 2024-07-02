@@ -198,6 +198,8 @@ extern const struct _mp_obj_module_t mp_module_radio;
 extern const struct _mp_obj_module_t mp_module_servo;
 extern const struct _mp_obj_module_t mp_module_rfid;
 extern const struct _mp_obj_type_t esp32_nvs_type;
+extern const struct _mp_obj_module_t example_user_cmodule; //基于C的mPy内嵌附加模块
+// 注：此处 example_user_cmodule 是模块对象 可以在对应源代码中找到
 
 #define MICROPY_PORT_BUILTIN_MODULES \
     { MP_OBJ_NEW_QSTR(MP_QSTR_esp), (mp_obj_t)&esp_module }, \
@@ -215,7 +217,9 @@ extern const struct _mp_obj_type_t esp32_nvs_type;
     { MP_OBJ_NEW_QSTR(MP_QSTR_audio), (mp_obj_t)&mp_module_audio }, \
     { MP_OBJ_NEW_QSTR(MP_QSTR_rfid), (mp_obj_t)&mp_module_rfid }, \
     { MP_ROM_QSTR(MP_QSTR_NVS), (mp_obj_t)(&esp32_nvs_type) }, \
+    { MP_ROM_QSTR(MP_QSTR_example), MP_ROM_PTR(&example_user_cmodule) }, \
     BOARD_PORT_BUILTIN_MODULES 
+//基于C的mPy内嵌附加模块(example处)
 
 #define MP_STATE_PORT MP_STATE_VM
 

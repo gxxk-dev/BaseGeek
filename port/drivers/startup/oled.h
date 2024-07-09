@@ -50,6 +50,8 @@
 
 #include "startup.h"
 
+esp_err_t write_cmd(uint8_t cmd);
+
 bool oled_init();
 void oled_deinit();
 

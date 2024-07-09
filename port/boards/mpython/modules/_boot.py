@@ -17,8 +17,7 @@ except OSError:
     import inisetup
     vfs = inisetup.setup()
 
-# 硬件复位标志
-for count in range(3):
-    print("=$%#=")
-    time.sleep_ms(150)
+BEGK_FeatureList=["CM-RawOled","CM-RunPy"]
+print("BaseGeek Ver.undefind\nEnableFeature:")
+for i in BEGK_FeatureList:print('  '+i)
 gc.collect()

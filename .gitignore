@@ -42,3 +42,5 @@ pymakr.conf
 **/__pycache__/
 build-venv/
 build-venv-robot/
+
+commit.patch

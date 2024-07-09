@@ -1,56 +1,51 @@
-# mPython Board
-
-欢迎您，使用掌控板！
-
-掌控板是创客教育专家委员会、猫友汇、广大一线老师共同提出需求并与创客教育行业优秀企业代表共同参与研发的教具、学具，是一块为教育而生的开源硬件，也是一个公益项目。
-
-mPython掌控板是一块MicroPython微控制器板，它集成ESP32高性能双核芯片，使用当下最流行的Python编程语言，以便您轻松地将代码从桌面传输到微控制器或嵌入式系统。
-
-
-![](https://github.com/labplus-cn/mPython/blob/master/docs/images/掌控-立1.png)  
-
-# 编程软件
-
-目前支持掌控板的编程软件有:
-
-<table >
-<tr style="height: 100px;">
-<td style="width: 100px; height: 100px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://wiki.labplus.cn/images/2/2d/MPythonX.png" width="60" height="60" /></td>
-<td style="width: 247px; height: 106px;">官方推荐编程软件,mPython是一款专用于掌控板的编程教育软件，给掌控板“注入”你想实现的功能，
-它可以让你从图形化编程入手，进而轻松掌握Python编程语言。</td>
-</tr>
-<tr style="height: 100px;">
-<td style="width: 100px; height: 100px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://www.labplus.cn/2b1507b610dd5820e815a646dd5535fb.png" width="60" height="60" /></td>
-<td style="width: 247px; height: 109px;">由Labplus盛思在MIT Scratch 3.0基础上研发的一款专门针对小学四到六年级学生学习编程的图形化软件。</br>相比原生Scratch 3.0，Labplus 3扩展了对掌控板的支持。在Labplus 3上应用掌控板时，有互动编程与离线编程两种模式。</br>软件强调易用性，只保留了最常用的功能，去掉了复杂的部分，便于初学者入门使用。软件有Windows和MacOS两个离线安装包，另外，还支持盛思魔盒与初级实验箱。</td>
-</tr>
-<tr style="height: 100px;">
-<td style="width: 100px; height: 100px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://download3.dfrobot.com.cn/website/image/logo.png" width="100" height="50" /></td>
-<td style="width: 247px; height: 109px;">Mind+是一款拥有自主知识产权的国产青少年编程软件，集成各种主流主控板及上百种开源硬件，</br>支持人工智能（AI）与物联网（IoT）功能，既可以拖动图形化积木编程，还可以使用Python/C/C++等高级编程语言，让大家轻松体验创造的乐趣。</td>
-</tr>
-</table>
-
-# 掌控板社区
-
-掌控板论坛: https://www.labplus.cn/forum
+<h1 align="center" style="font-size: 3.27em;line-height:0.4;"><b>BaseGeek</b></h1>
+<h3 align="center">一款运行在 handPy(掌控板) 上的 面向开发者 的高级工具箱</h3>
+<p align='center'>
+<a href="https://www.gnu.org/licenses/agpl.txt"><img src="https://img.shields.io/badge/License-AGPL%20v3+-red.svg" alt="开源协议: AGPL3(or later)"></a>
+<img alt="项目所在平台:掌控板(基于esp32)" src="https://img.shields.io/badge/Platform-handPy(based%20on%20esp32)-gold">
+</p>
+<hr class="solid">
 
 
-# 相关链接
+传送门 ：[**快速入手**](#快速入手) | [**版权事项**](#版权事项) | [**FAQ(常见问题)**](#FAQ)
 
-GitHub: https://github.com/labplus-cn/mPython         <br/>
-掌控板官网: https://www.mpython.cn                      <br/>
-掌控板编程参考手册: https://mPython.readthedocs.io          <br/>
-掌控板编程软件(mPython)手册: https://mpythonsoftware.readthedocs.io/         <br/>
+# 快速入手
 
-# 许可信息
+1. 准备基础环境
+    > 准备一个可编译hPy[^hPy]官方固件[^官方固件仓库]的环境即可
+    > 别忘记`source esp-idf/export.sh`!
+2. 进入目录`port` 执行`make`命令
+3. 等待编译完成 此时您所需要的固件便位于`port/build/mpython/firmware.bin`
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![License: CERN v1.2](https://img.shields.io/badge/License-CERN%20v1.2-lightgrey.svg)
-![License: CC0](https://img.shields.io/badge/License-CC0-blue.svg)
+# 版权事项
 
+本项目以 **AGPL v3(or later)** 作为开源协议
 
-掌控板是一个[OSHWA](https://certification.oshwa.org/cn000006.html) 认证的开源硬件项目,代码和设计都是开源。但软件须在[GPL-3](http://www.gnu.org/licenses/gpl.html)许可下使用,硬件在CERN许可下使用,文档在CC0许可下使用。
+您应在源码根目录的`LICENSE.GPL3`中获取到 **AGPL v3(or later)** 源文件的副本，如没有，请访问<https://www.gnu.org/licenses/gpl-3.0.txt>
 
+## 使用到的开源项目
 
-# 联系我们
+1. hPy官方固件[^官方固件仓库] 包括其所有上游项目
+    > 具体版权信息缺失 仅在[文档](https://mpython.readthedocs.io/zh-cn/master/license.html)中有提及 软件部分 应在`GPL v3`下使用
+2. [Teno](https://gitee.com/KAIKenny/pola-os/tree/develop/Teno) Copyright (c) 2024, [Kenny](https://gitee.com/KAIKenny)
+    > Teno 项目使用`BSD 3-Clause License` 在遵循协议的情况下使用有关 电量计算/获取等 的部分.
+3. Devlib Copyright (c) 2024, emofalling
+    > Devlib 项目使用`LGPL v3+` 在遵循协议的情况下将其作为模块嵌入BEGK
+# FAQ
 
-如果您对文档或掌控板的使用有任何建议或疑问，请在Github上创建一个问题，以便与他人共享答案和解决方案。
+### 1. 我的适配官方固件[^官方固件仓库]的代码能否在BEGK[^BEGK]内运行？
+
+#### 不能。您可能需要针对BEGK的一部分特性/API进行适配
+
+原因：
+> BaseGeek针对hPy[^hPy]官方固件做了极大变动
+> 砍掉了用于与大部分hPy[^hPy]独有硬件的具象化API，转而另辟新路，使用更为高性能/简易的解决方法
+> 
+> 您可能需要针对BEGK的一部分特性进行适配
+
+> 题外话：感谢emofalling为BEGK带来的DevLib，重写了大量`/port/boards/mpython/modules/mpython.py`内的低质代码
+
+[^hPy]: 此处指掌控板(handPy)
+[^官方固件仓库]: 此处指`github.com/labplus-cn/mpython`
+[^BEGK]: 即本项目，BaseGeek(BEGK)
+[^labp]: 即LabPlus，盛思。是掌控板硬/软件的主要开发者/贡献者

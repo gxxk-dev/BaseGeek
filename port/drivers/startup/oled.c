@@ -2,7 +2,6 @@
 #include "oled.h"
 #include "font_petme128_8x8.h"
 #include "startup.h"
-
 static uint8_t oled_vram[OLED_WIDTH*OLED_HEIGHT/8];
 
 esp_err_t write_cmd(uint8_t cmd) {

@@ -128,7 +128,7 @@ void mpython_stop_thread(void) {
 }
 
 static uint16_t hw_init_flags = 0;
-const char msg_iic_failed[] = "IIC硬件错误(IIC Hardfault),系统无法正常工作!IIC连线是否接反?请移除IIC总线上的所有设备后重试!\n";
+const char msg_iic_failed[] = "IIC硬件错误(IIC Hardfault),系统无法正常工作!\n";
 
 void mp_task(void *pvParameter) {
     volatile uint32_t sp = (uint32_t)get_sp();
@@ -168,6 +168,11 @@ void mp_task(void *pvParameter) {
 soft_reset:
     hw_init_flags = 0;
     // startup
+    mp_hal_stdout_tx_str("BaseGeek (c) 2024 Gxxk\n");
+    mp_hal_stdout_tx_str("本程序在AGPL v3(or later)协议下发布\n");
+    mp_hal_stdout_tx_str("您应随源码仓库获得一份AGPLv3+协议副本(LICENSE)\n");
+    mp_hal_stdout_tx_str("如无此文件 请参见https://www.gnu.org/licenses/agpl.txt");
+
     // iic总线错误,打印提示信息
     if (oled_init() == false) { 
         ESP_LOGE("system", "%s", msg_iic_failed);

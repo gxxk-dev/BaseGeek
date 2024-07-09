@@ -365,7 +365,9 @@ SRC_C = \
 	mpthreadport.c \
 	machine_rtc.c \
 	machine_sdcard.c \
-	example.c
+	raw_oled.c \
+	run_pyfile.c \
+	perf_test.c
 # 基于C的mPy内嵌附加模块
 EXTMOD_SRC_C += $(addprefix extmod/,\
 	modonewire.c \
@@ -900,9 +902,9 @@ all: $(BUILD)/firmware.bin
 idf-version:
 	$(ECHO) "ESP IDF supported hash: $(ESPIDF_SUPHASH)"
 
-$(BUILD)/firmware.bin: $(BUILD)/bootloader.bin $(BUILD)/partitions.bin $(BUILD)/application.bin ./Noto_Sans_CJK_SC_Light16.bin
+$(BUILD)/firmware.bin: $(BUILD)/bootloader.bin $(BUILD)/partitions.bin $(BUILD)/application.bin
 	$(ECHO) "Create $@"
-	$(Q)$(PYTHON) release.py $^ $@
+	$(Q)$(PYTHON) release.py $^ ./Noto_Sans_CJK_SC_Light16.bin $@
 
 deploy: $(BUILD)/firmware.bin
 	$(ECHO) "Writing $^ to the board"

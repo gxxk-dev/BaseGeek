@@ -21,7 +21,7 @@
 
 本项目以 **AGPL v3(or later)** 作为开源协议
 
-您应在源码根目录的`LICENSE.GPL3`中获取到 **AGPL v3(or later)** 源文件的副本，如没有，请访问<https://www.gnu.org/licenses/gpl-3.0.txt>
+您应在源码根目录的`LICENSE`中获取到 **AGPL v3(or later)** 源文件的副本，如没有，请访问<https://www.gnu.org/licenses/agpl.txt>
 
 ## 使用到的开源项目
 

@@ -33,7 +33,7 @@
 _build/
 .vscode/
 vs/
-.github/
+#.github/
 ports/esp32/build/
 mpy-cross/build/
 mpy-cross/*.map

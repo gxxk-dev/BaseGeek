@@ -1,3 +1,11 @@
+# 本项目现已停止维护与更新
+
+
+
+别看了别看了 这就是使
+
+
+
 <h1 align="center" style="font-size: 3.27em;line-height:0.4;"><b>BaseGeek</b></h1>
 <h3 align="center">一款运行在 handPy(掌控板) 上的 面向开发者 的高级工具箱</h3>
 <p align='center'>
